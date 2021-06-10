@@ -5,3 +5,4 @@ con JavaScript
 1.- Operadores.html
 2.- Condiciones.html
 3.- Bucles.html
+3.- Funcion.html
