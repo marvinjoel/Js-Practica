@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Variables locales y globales</h2>
+
+    
+    <script>
+        // variable GLOBAL
+        var x = "Global";
+
+        // al imprimir veremos que la variable se podra usar dentro o fura de la fncion
+        function vBlobal(){
+            document.write("Soy una variable: "+x+ "</br>");
+        }
+        vBlobal();
+        document.write("Soy una variable: "+x+ "</br>");
+
+
+        // variable LOCAL
+        
+        function local(){
+            var y = "Local"
+            document.write("Soy una variable: "+y+ "</br>");
+        }
+        local();
+        // no se imprimira, solo dara un error que la variable Y no esta definida
+        document.write("Soy una variable: "+y+ "</br>");
+
+    </script>
+</body>
+</html>
