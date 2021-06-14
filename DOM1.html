@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+
+    <div id="subtitulo"></div>
+
+    <h1 id="titulo"> Título de nuestro sitio web</h1>
+    <p>1.- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis voluptates ut accusantium minus, quas cum. Provident ullam quo deleniti cupiditate velit hic rerum totam tempora rem. Accusamus sunt fugiat doloribus?</p>
+    <p id="segundo">2.- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae molestiae, aliquid eaque odio quidem, natus aperiam voluptatum laboriosam animi iusto optio saepe nulla neque exercitationem sunt aspernatur eos nam quod.</p>
+    <p>3.- Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat veniam asperiores natus fugiat eius error, nobis saepe ipsum molestiae, quaerat molestias sapiente blanditiis? Quisquam, eveniet nobis? Iure magnam suscipit dolore!</p>
+
+    
+
+
+    <script>
+
+        // mostrar por etiquetas de html
+        var elemetosP = document.getElementsByTagName("p");
+
+        // mostrar por ID
+        var segundoParrafo = document.getElementById("segundo");
+
+
+        //Para agregar nuevo elemento tenemos qe seguir los siguientes pasos 
+
+        // 1.- Crear el elemento
+        var elemeto = document.createElement("h2");
+
+        // 2.- Crar un nodo de text
+        var contenido = document.createTextNode("Este es nuestro titular");
+
+        // 3.- añadir el nodo de texto al elemento
+        elemeto.appendChild(contenido);
+
+        // 4.- Agregar atributos al elemento
+        elemeto.setAttribute("align", "center");
+
+        // 5.- Agregar el elemento al documento
+        document.getElementById("subtitulo").appendChild(elemeto);
+
+        // para agreagr al final del Body
+        //document.body.appendChild(elemeto)
+
+    </script>
+</body>
+</html>
