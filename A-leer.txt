@@ -1,0 +1,15 @@
+Número de Orden para realizar las practicas
+con JavaScript
+
+
+1.- Operadores.html
+2.- Condiciones.html
+3.- Bucles.html
+4.- Funcion.html
+5.- Funcion1.html
+6.- Funcion2.html
+7.- Funcion3.html
+8.- poo1.html
+9.- DOM1.html
+10.- DOM2.html
+11.- DOM3.html
