@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1>Agregando nodos al DOM</h1>
+
+    <ol id="lista">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicin</li>
+        <li>Tenetur illo excepturi aperiam voluptas aspernatur alias magnam?</li>
+    </ol>
+
+    <script>
+        // creamos nuestra variable
+        var elemento = document.createElement("li"),
+            contenido = document.createTextNode("Nuevo texto");
+
+        elemento.appendChild(contenido);
+
+        // para agregar el nodo dentro de la etiqueta
+        // accedemos directamente al ID
+        // agregamos directamente al ultimo lugar
+
+        
+        var padre = document.getElementById("lista");
+        padre.appendChild(elemento);
+
+
+        // Personalizar mandando al lugar o posicion que querramos
+        /*
+
+        var padre = document.getElementsByTagName("li")[0].parentNode,
+            // define en la posicion que se agregara
+            primerElemento = document.getElementsByTagName("li")[1];
+
+        padre.insertBefore(elemento, primerElemento)
+
+        */
+    </script>
+</body>
+</html>
