@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1>Modificando, Remplazando y Eliminando Nodos del DOM</h1>
+
+    <ol id="lista">
+        <li id="primero">Lorem ipsum dolor sit amet consectetur adipisicin</li>
+        <li>Tenetur illo excepturi aperiam voluptas aspernatur alias magnam?</li>
+    </ol>
+
+    <script>
+
+        /* 
+        Acceder al primero elemento
+        */
+
+        //var primerElemento = document.getElementById("primero");
+
+        // acceder al texto del primer elemento
+        //primerElemento.innerHTML = "Nuevo <b>texto</b>";
+
+        // -----------------------------------------------//
+
+
+
+        /*
+
+        Modificando
+
+        */
+
+
+        //var elemento = document.createElement("li"),
+        //    contenido = document.createTextNode("Nuevo texto");
+
+        //elemento.appendChild(contenido);
+        
+
+        //var padre = document.getElementsByTagName("li")[0].parentNode,
+        //    referencia = document.getElementsByTagName("li")[1];
+
+        // recibe 2 argumentos " lo que quieres agregar" && "lo que quieres eliminar"
+        //padre.replaceChild(elemento, referencia )
+
+
+        /*
+        ----------------------------------------------------------
+
+        ELEMINAR UN ELEMENTO EN DOM
+
+        */
+
+        
+        var elemento = document.createElement("li"),
+            contenido = document.createTextNode("Nuevo Texto");
+        
+            elemento.appendChild(contenido);
+        
+        var padre = document.getElementsByTagName("li")[0].parentNode,
+            referencia = document.getElementsByTagName("li")[0];
+
+            // recibe un parametro de cual queremos eliminar
+        padre.removeChild(referencia);
+
+        
+    </script>
+</body>
+</html>
