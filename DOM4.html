@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #dddddd;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #AAAAAA;
+        }
+
+        .azul{
+            background: #0074D9;
+            border: 1px solid #000;
+        }
+
+        .rojo{
+            background: #c21a11;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Acceso a los atributos del DOM</h1>
+
+
+    <section id="contenedor">
+        <a href="https://aprendejavascript.org/" id="enlace">Pagina web</a>
+        <div class=""></div>
+        <div class=""></div>
+    </section>
+
+
+    <script>
+        // creando un nuevo elemento
+        var elemento = document.createElement("div");
+
+        var padre = document.getElementById("contenedor");
+
+        var referencia = document.getElementsByTagName("div")[0];
+        elemento.setAttribute("class",'azul');
+
+        padre.insertBefore(elemento, referencia);
+
+
+    </script>
+</body>
+</html>
