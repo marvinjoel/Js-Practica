@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos de JavaScript</h1>
+
+
+
+
+    <script>
+        let a = 2;
+        let b = new Number(1);
+        let c = 7.19;
+        let d = "5.6";
+
+        // imprimer lo que lleva las variables
+        console.log(a, b);
+        // formatea los decimales
+        console.log(c.toFixed(1));
+        console.log(c.toFixed(5));
+        // imprime el numero entero
+        console.log(parseInt(c));
+        // imprime en decimales o numeros flotantes
+        console.log(parseFloat(c));
+        // imprime el typo de variable declarada
+        console.log(typeof c, typeof d);
+        // imprime la suma de ambas por que son tipo entero
+        console.log(a+b);
+        // imprime la concatenacion de ambas por que la variable D es de tipo string
+        console.log(c+ d);
+
+        // combierte en entero y lo suma
+        // toda la suma lo ponemos en una variable
+        console.log(c + parseFloat(d));
+
+    </script>
+</body>
+</html>
