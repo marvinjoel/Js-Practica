@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Funciones</h1>
+
+
+    <script>
+
+        /*
+        La función del ejemplo se llama saludar , y se le pasa un único parámetro, entre
+paréntesis (...) , que es nombre . Ese parámetro funciona como contenedor de una
+variable que es utilizada dentro del bloque de código delimitado por las llaves {...} . El
+comando return devolverá el String que concatena texto con el valor que contiene el
+parámetro nombre .
+        */
+
+        function saludar(nombre){
+            return ("nombre: "+nombre+ " !");
+        };
+        
+        console.log(saludar("pedro"));
+
+        /*
+
+        Parámetros por defecto:
+            Una buena práctica para evitar errores o que se tome el valor undefined sin que
+            podamos controlarlo, es utilizar algunos de los operadores booleanos que vimos en
+            capítulos anteriores. Si tomamos el operador OR || podemos asignar un valor por
+            defecto si no está definido. Veamos un ejemplo:
+*/
+
+        function saludar (type, name) {
+            let tipo = type || "Hola";
+            let nombre = name || "Jose";
+            return (tipo+', '+nombre);
+        };
+        
+        console.log(saludar());
+        console.log(saludar("Hi"));
+        console.log(saludar("Hi","armando"));
+
+
+
+
+
+        /*
+        Funciones como objetos
+            Las funciones en JavaScript son objetos, ya que todo en JavaScript es un objeto,
+            heredan sus propiedades de la clase Object . Entonces pueden ser tratadas como tal.
+            Podemos guardar una función en una variable y posteriormente invocarla con el
+            operador paréntesis () . Ejemplo:
+        */
+
+        var saludo = function(name){
+            return "Hola "+name;
+        };
+        console.log(saludo("Juan"));
+
+        
+    </script>
+</body>
+</html>
