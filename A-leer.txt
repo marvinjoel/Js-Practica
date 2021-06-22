@@ -1,7 +1,8 @@
 ﻿Número de Orden para realizar las practicas
 con JavaScript
 
-
+(Leer primero)
+    - PrimerosConceprios(carpeta):
 1.- Operadores.html
 2.- Condiciones.html
 3.- Bucles.html
