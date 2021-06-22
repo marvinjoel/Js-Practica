@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Funciones Anidadas</h1>
+    <h1>Función cierre o closure</h1>
+    <h1>Funciones como clases</h1>
+
+
+    <script>
+        /*
+        Funciones anidadas:
+            Las funciones pueden tener otras funciones dentro de ellas, produciendo nuevos
+            ámbitos para las variables definidas dentro de cada una. Y para acceder desde el
+            exterior a las funciones internas, tenemos que invocarlas con el operador doble
+            paréntesis ()() . Veamos un ejemplo
+
+        */
+
+        let a = "ola";
+
+        function global(){
+            let b = "K";
+
+            function local(){
+                let c = "Ase";
+                return a+b+c;
+            }
+            return local;
+        }
+
+        console.log(global());
+        console.log(global()());
+
+
+
+
+        /*
+        Función cierre o closure:
+            Un Closure es una función que encapsula una serie de variables y definiciones locales
+            que únicamente serán accesibles si son devueltas con el operador return . JavaScript
+            al no tener una definición de clases como tal (como por ejemplo en Java, aunque con la
+            versión ECMAScript6 esto cambia un poco) este patrón de creación de closures, hace
+            posible modularizar nuestro código y crear algo parecido a las clases.
+            Veamos un ejemplo de closure con la siguiente función. Creamos una función que tiene
+            un variable local que guarda el valor de un numero que será incrementado o
+            decrementado según llamemos a las funciones locales que se devuelven y acceden aesa variable. la variable local _contador no puede ser accesible desde fuera si no es a
+            través de esas funciones:
+        */
+
+        let miContador = (function(){
+            let _contador = 0;
+
+            function incrementar(){
+                return _contador++;
+            }
+
+            function decrementar(){
+                return _contador--;
+            }
+
+            function valor(){
+                return _contador;
+            }
+
+            return {
+                
+                incrementar: incrementar,
+                decrementar: decrementar,
+                valor: valor
+            
+            }
+            
+        })();
+        console.log(miContador.valor());
+        console.log(miContador.incrementar());
+        console.log(miContador.incrementar());
+        console.log(miContador.valor());
+        console.log(miContador.decrementar());
+        console.log(miContador.valor());
+
+
+
+
+        /*
+
+        Funciones como clases
+            Un closure es muy similar a una clase, la principal diferencia es que una clase tendrá un
+            constructor que cumple el mismo cometido que el closure. Al crear un objeto a partir de
+            una clase debemos usar el parámetro new y si es un closure, al inicializar un nuevo
+            objeto, se le pasa lo que le devuelve la función cierre.
+            Veamos un ejemplo de la misma función, codificada como clase y como closure, y como
+            se crearían sus objetos
+        */
+
+
+        function inventario(nombre){
+
+        
+            let _nombre = nombre;
+            let _articulo = {};
+
+            function add(nombre, cantidad){
+                _articulo[nombre] = cantidad
+            }
+
+            function borrar(nombre){
+                delete _articulo[nombre];
+            }
+
+            function cantidad(nombre){
+                return _articulo[nombre];
+            }
+
+            function nombre(){
+                return _nombre;
+            }
+        
+            return {
+                
+                add: add,
+                borrar: borrar,
+                cantidad: cantidad,
+                nombre: nombre
+            }
+        
+        };
+
+
+        //Ahora veamos como sería esto mismo pero codificado como Clase:
+
+        function inventario1(name){
+            this.nombre = name;
+            this.articulo = [];
+
+            this.add = function(name, cant){
+                this.articulo[name] = cant;
+            }
+
+            this.borrar = function(name){
+                delete this.articulo[name];
+            }
+
+            this.cantidad = function(name){
+                return this.articulo[name];
+            }
+
+            this.getNombre = function(){
+                return this.name;
+            }
+
+        }
+
+    </script>
+</body>
+</html>
