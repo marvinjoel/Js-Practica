@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bucles</h1>
+    <h3>
+        <p>En ocasiones nos interesa que determinados bloques de código se ejecuten varias
+            veces mientras se cumpla una condición. En ese caso tenemos los bucles para
+            ayudarnos. Dependiendo de lo que necesitemos usaremos uno u otro. A continuación
+            veremos cuales son y algunos ejemplos prácticos para conocer su uso.
+            Existen 3 elementos que controlan el flujo del bucle. La inicialización que fija los
+            valores con los que iniciamos el bucle. La condición de permanencia en el bucle y la
+            actualización de las variables de control al ejecutarse la iteración.</p>
+    </h3>
+    <br><br>
+    <h2>Bucle while</h2>
+    <h3>
+        <p>La sintaxis de un bucle while es la siguiente, el bloque de código dentro del while se
+            ejecutará mientras se cumpla la condición</p>
+    </h3>
+    <br><br>
+    <h2>Bucle Do/While</h2>
+    <h3>
+        <p>El bucle do-while es similar al while con la salvedad de que ejecutamos un bloque
+            de codigo dentro de do por primera vez y despues se comprueba la condición de
+            permanencia en el bucle. De esta manera nos aseguramos que al menos una vez el
+            bloque se ejecute
+            </p>
+    </h3>
+    <br><br>
+    <h2>Bucle For</h2>
+    <h3>
+        <p>Por último el bucle for es una sentencia especial pero muy utilizada y potente. Nos
+            permite resumir en una línea la forma de un bucle while. Su sintaxis es la siguiente</p>
+    </h3>
+    <br><br>
+    <h2>Bucle For/Each
+    </h2>
+    <h3>
+        <p>Este tipo de bucle fue una novedad que introdujo ECMAScript5. Pertenece a las
+            funciones de la clase Array y nos permite iterar dentro de un array de una manera
+            secuencial. Veamos un ejemplo:</p>
+    </h3>
+    <br><br>
+    <h2>Bucle For/In</h2>
+    <h3>
+        <p>Además de ForEach , tenemos el bucle ForIn Con este tipo de bucle podemos iterar
+            entre las propiedades de un objeto de una manera más sencilla que la vista
+            anteriormente. La sintaxis es for( key in object ) siendo key el nombre de la
+            propiedad y object[key] el valor de la propiedad. Como siempre, veamos un ejemplo
+            práctico:</p>
+    </h3>
+
+    <script>
+        //Bucle while:::
+        //Por ejemplo si queremos mostrar por consola los números del 1 al 10, con un bucle
+        //while sería así
+
+
+        let i = 1;
+        while(i < 11){
+            console.log(i);
+            i++
+        }
+
+
+
+        //Bucle Do/While::::
+        let e = 1;
+        do{
+            console.log(e);
+            e++
+        }while(e< 11);
+
+
+        //Bucle For:::::::::
+        //Los elementos de control se definen entre los paréntesis (...) y se separan por punto
+        //y coma ; . Los bucles anteriores en formato for serían así
+
+        for(let a=1; a<11; a++){
+            console.log("for"+a);
+        }
+
+
+
+        //Bucle For/Each
+        let miArray = [1,2,3,4,5];
+        miArray.forEach(function(elemento, index){
+            console.log(`El valor de la posición ${index} es ${elemento}`);
+        
+        });
+
+
+
+        //Bucle For/In
+
+        let libro = {
+            titulo: "Aprendiendo Js",
+            autor: "Carlos Azaustre",
+            numPaginas: 64,
+            editorial: "carlosazaustre.es",
+            precio: "2.95",
+        };
+
+        for(let prop in libro){
+            console.log(`La propiedad ${prop} contiene ${libro[prop]}`);
+        }
+    </script>
+</body>
+</html>
