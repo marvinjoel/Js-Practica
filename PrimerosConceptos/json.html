@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <h3>
+        <p>JSON es el acrónimo de JavaScript Object Notation. Notación de objeto JavaScript. Es
+            un objeto JavaScript pero con algunos detalles de implementación que nos permitirán
+            serializarlo para poder utilizarlo como intercambio de datos entre servicios. Antes de
+            popularizarse este formato, el más común era XML (eXtended Marked language) pero
+            insertaba demasiadas etiquetas HTML (o XML) lo que lo hacía menos legible y más
+            complicado de decodificar. JSON por su parte al ser en sí un objeto JavaScript es ideal
+            para aplicaciones que manejen este lenguaje.
+            Los detalles de implementación son que las propiedades del objeto deben ser Strings
+            para que no haya problemas al codificarlo y decodificarlo.
+            Debemos tener en cuenta que algunos tipos de datos no se van a serializar igual. Por
+            ejemplo los tipos NaN e Infinity se codifican como null . Y los objetos de tipo
+            Date muestran la fecha en formato ISO y al reconstruirlo será un String sin poder
+            acceder a los métodos que hereda de la clase Date . Tampoco se pueden serializar
+            funciones, expresiones regulares, errores y valores undefined. El resto de primitivas y
+            clases como objects , arrays , strings , números, true , false y null .
+            Veamos un ejemplo de un objeto JSON y como podemos serializarlo y reconstruirlo:</p>
+    </h3>
+
+
+
+
+
+    <script>
+        let usuario = {
+        
+            "id":"0123456",
+            "username": "joelVilca",
+            "password": "fkldfn4r09330adafnanf9843fbcdkjdkks",
+            "data":{
+                "name":"Joel Vilca",
+                "email": "carlosazaustre@gmail.com",
+                "city": "Madrid",
+                "country": "ES"
+            },
+            "preferences":{
+                "contact":{
+                    "email":true,
+                    "notify": true
+                },
+                "interests":[
+                    "javascript",
+                    "nodejs",
+                    "angularjs"
+                ]
+            }
+        
+        };
+        //----Si queremos acceder a una propiedad determinada podemos hacerlo como cualquier
+        //objeto:
+        //console.log(usuario.data.city);
+
+
+
+        //Si queremos serializarlo para poder realizar un intercambio de datos, debemos usar la
+        //función JSON.stringify que devuelve en un String la información del objeto que se le
+        //pasa por parámetro.
+
+        let jsonSerializado = JSON.stringify(usuario);
+        console.log(jsonSerializado);
+
+        //Si ahora queremos acceder a las propiedades no podemos, porque se trata de un
+        //string.
+
+
+        //Para poder reconstruirlo a partir del string, tenemos la función JSON.parse que
+        //devuelve un objeto a partir del string que se pasa como parámetro. Tiene que estar
+        //correctamente formado, si no el método parse nos devolverá error.
+
+        let jsonReconstruido = JSON.parse(jsonSerializado);
+        console.log(jsonReconstruido);
+        //jsonReconstruido.data.city
+    </script>
+</body>
+</html>
