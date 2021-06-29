@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Array</H1>
+
+
+
+    <script>
+        // Declaramos variables para los Array
+        let miArray1 = [1,'hola',true,2.3, 'world'];
+        console.log(miArray1[3]);
+
+        // array sobre otro array
+        let miArray2 = [1,'hola',true,2.3, 'world',[1230, false, 'Hello World']];
+        console.log(miArray2[5][2]);
+
+        // Array  y funcion
+        let permitido = 'Usuario Permitido';
+        let miFuncion = acceso => acceso;
+        let miArray3 = [1,'hola',true,2.3, 'world',[1230, false, 'Hello World'], 45, miFuncion(permitido)];
+        console.log(miArray3[7]);
+
+        //array y Objeto
+        let persona = {
+            nombre:'Juan',
+            Apellido:'Quispe',
+            edad: 23,
+        };
+
+        let miArray4 = [1,'hola',true,2.3, 'world',[1230, false, 'Hello World'], 45, miFuncion(permitido), persona];
+        console.log(miArray4[8]);
+        console.log(miArray4[8].Apellido);
+
+        //Array dinamicos
+        let persona1 = {
+            nombre:'Juan',
+            miAutomovil: [
+                puntira = {
+                    marca:'Marca',
+                    precio: 2000,
+                    color: 'verde',
+                },
+                vendedor={
+                    nombre:'Pepe',
+                    edad: 43
+                }
+            ]
+        };
+
+        let miArray5 = [1,'hola',true,2.3, 'world',[1230, false, 'Hello World'], 45, miFuncion(permitido), persona1];
+        console.log(miArray5[8].miAutomovil[0].marca);
+        console.log(miArray5[8].miAutomovil[0].precio);
+
+        console.log(miArray5[8].miAutomovil[1].nombre);
+    </script>
+</body>
+</html>
