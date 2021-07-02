@@ -53,3 +53,23 @@ else if(totalPago > deuda){
 for(var num = 0; num<= 100; num = num+2){
     console.log(num)
 }
+
+
+const jon = {
+    nombre: 'Jose',
+    apellido:'Carlos',
+    edad: 24
+}
+// recorre propiedades de un objeto
+for(const propiedad in jon){
+    console.log(`Key: ${propiedad}, Value: ${jon[propiedad]}`);
+}
+
+
+
+// permite recorrer todos los elementos de cualquier objeto que sea iterable
+ let numeros = [10,20,30,40,50,60,70,80,90]
+
+ for(const elemento of numeros){
+     console.log(`iterado ${elemento}`)
+ }
