@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Funcion Flecha 3</h1>
+
+
+    <script>
+        function el (num) {
+            return num * num
+        }
+        console.log(el(3));
+
+        // funcion flecha 3 tipos validos
+        const cuadrado1 = (num)=>{
+            return num * num
+        }
+        console.log(cuadrado1(4))
+
+        const cuadrado2 = num =>{
+            return num * num
+        }
+        console.log(cuadrado2(5))
+
+        // Cuando solo tiene un parametro
+        const cuadrado3 = num => num * num;
+        console.log(cuadrado3(7))
+
+        const sumar = (n1, n2)=>n1+n2;
+        console.log(sumar(2,3))
+
+        // La funcion flecha no se puede usar dentro de un Objeto
+        const persona = {
+            nombre :'Fernando',
+            apellido: 'Valdes',
+            saludar: function () {
+                console.log(`Hola mi nombre es ${this.nombre}`)
+            },
+            last_name: () =>{
+                console.log(`mi apellido es ${this.apellido}`)
+            }
+        };
+
+        persona.saludar()
+        persona.last_name()
+
+
+
+    </script>
+</body>
+</html>

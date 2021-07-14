@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Funcion Flecha1</h1>
+
+
+<script>
+    const sumar = (num1, num2)=>{
+        return new Promise((res, rej)=>{
+            setTimeout(()=>{
+                let suma = num1 + num2;
+                if (suma > 100){
+                    res(suma);
+                }else{
+                    rej('Error al procesar los datos')
+                }
+            }, 2000);
+        });
+    };
+
+
+    // Funcion Asyncrona
+    const llamarFuncion = async ()=>{
+        try{
+           const res = await sumar(12, 8);
+            console.log(res)
+        }  catch (e) {
+            console.log(`Error: ${e}`);
+        }
+
+    };
+
+    llamarFuncion()
+</script>
+</body>
+</html>
